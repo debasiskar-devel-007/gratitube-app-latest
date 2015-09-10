@@ -1,0 +1,69 @@
+<div id="menu" class="menucontain">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 98%; height: 70px; margin: 0 auto; padding: 0 1%">
+        <tr>
+            <td align="left" valign="middle" width="25%"><div class="main-page lateral-slide-menu-main-page">
+                <a href="" class="toggle-menu" lateral-slide-menu-toggle><img src="./ng-images/link1.png" alt="#" /></a>
+            </div>
+            </td>
+            <td align="center" valign="middle" width="50%"><img src="./ng-images/contacts.png" alt="#" class="containlogo"  style="display: block; margin: 0 auto;"/></td>
+            <td align="right" valign="middle" width="25%"></td>
+
+
+
+        </tr>
+
+
+    </table>
+</div>
+
+
+<div class="maincontent">
+
+    <div class="friendswrapper">
+
+        <div class="topsearch contacts">
+
+            <input type="text" placeholder="Search your Friends " class="searchinput" ng-model="search">
+
+            <div class="clear"></div>
+
+        </div>
+
+<div class="friendblockwrapper">
+        <div class="friendblock" ng-repeat="item in contactList | filter:search:strict as results">
+
+            <div class="frindtext">
+                <strong>{{item.name}}</strong>
+                <span>{{item.email}}</span>
+            </div>
+
+            <div class="frindbtn">
+                <a href="javascript:void(0);" class="fbtn1" ng-click="emailShare(item.email)">Share</a>
+                <div class="clear"></div>
+
+            </div>
+
+
+
+            <div class="clear"></div>
+
+        </div>
+
+</div>
+
+        <div class="noresults" style="padding-top: 25px;" ng-if="results.length == 0">
+            <strong>No results found...</strong>
+        </div>
+
+
+        <div class="contactsfooter">
+        <a href="javascript:void(0);" ng-click="importContact()" class="contact-btn">Import Contact</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+

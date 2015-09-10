@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gratitube </title>
+
+
+
+    <link href="ng-css/slider.css" rel="stylesheet">
+    <link href="ng-css/videogular.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="ng-css/bootstrap.css" />
+    <link rel="stylesheet" href="ng-css/fullcalendar.css">
+    <link rel="stylesheet" href="ng-css/calendarDemo.css" />
+
+
+
+    <script src="ng-js/jquery.min.js"></script>
+
+
+    <script src="ng-js/angular.js"></script>
+
+    <script src="ng-js/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="ng-js/moment.js"></script>
+    <script src="ng-js/fullcalendar.js"></script>
+    <script src="ng-js/gcal.js"></script>
+    <script src="ng-js/calendar.js"></script>
+
+    <script src="ng-js/angular-animate.min.js"></script>
+    <script src="ng-js/angular-ui-router.js"></script>
+    <script src="ng-js/videogular.js"></script>
+    <script src="ng-js/app.js"></script>
+    <script src="ng-js/angular-validator.js"></script>
+    <script src="ng-js/angular-cookies.js"></script>
+    <script src="ng-js/ngDialog.js"></script>
+    <script src="ng-js/common.js"></script>
+    <script src="ng-js/angular-sanitize.min.js"></script>
+    <script src="ng-js/angular-mobile.js"></script>
+    <script type="text/javascript" src="ng-js/angular-ap-lateral-slide-menu.js"></script>
+    <script src="ng-js/bootstrap-colorpicker-module.js"></script>
+
+   <!-- <link rel="stylesheet" href="topcoat/css/topcoat-mobile-light.min.css"/>-->
+
+
+
+    <link rel="stylesheet" href="ng-css/ngDialog.css">
+    <link rel="stylesheet" href="ng-css/ngDialog-theme-default.css">
+    <link rel="stylesheet" href="ng-css/theme-medium.css">
+    <link rel="stylesheet" href="ng-css/style.css">
+
+
+
+
+
+
+
+
+
+
+</head>
+<body ng-app="gartitube" lateral-slide-menu-controller>
+
+<!-- We'll also add some navigation: -->
+<!--<a ui-sref="loader">loader</a>
+<div ui-view></div>
+<a ui-sref="state1">State 1</a>
+<div ui-view></div>
+<a ui-sref="state2">State 2</a>
+<div ui-view></div>-->
+<div class="homepagewrapper">
+    <div ui-view="navigation"></div>
+    <div class="clear"></div>
+    <div ui-view="content"></div>
+
+</div>
+
+<div class="clear"></div>
+<div ui-view="footer"></div>
+
+
+<div ui-view="loader"></div>
+
+
+<input type="hidden" id="deviceid">
+<input type="hidden" id="username">
+<input type="hidden" id="accessToken">
+
+
+
+
+
+
+
+
+
+</body>
+</html>

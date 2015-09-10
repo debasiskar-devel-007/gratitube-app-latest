@@ -1,0 +1,203 @@
+
+<div id="menu" class="menucontain">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 98%; height: 70px; margin: 0 auto; padding: 0 1%">
+        <tr>
+            <td align="left" valign="middle" width="25%"><div class="main-page lateral-slide-menu-main-page">
+                <a href="javascript:void(0)"  class="toggle-menu" lateral-slide-menu-toggle><img src="./ng-images/link1.png" alt="#" /></a>
+            </div>
+            </td>
+            <td align="center" valign="middle" width="50%"><img src="./ng-images/record.png" alt="#" class="containlogo"  style="display: block; margin: 0 auto;"/></td>
+            <td align="right" valign="middle" width="25%"></td>
+
+
+
+        </tr>
+
+
+    </table>
+</div>
+
+
+<div class="maincontent">
+
+    <form ng-submit="sharegratitube()">
+
+    <div class="recordwrapper">
+
+    <div class="recordimg" style="opacity: 1;">
+        <img ng-if="!filename && !tempimage" src="./ng-images/pic3.png" alt="#" style="opacity: 0.5;" />
+        <img ng-if="filename && filetype=='image'" src="http://torqkd.com/uploads/video1/images/{{filename}}.jpg" alt="#" />
+        <div ng-if="tempimage && filetype=='video' && !filename">
+            <div style="position: relative;">
+                <img src="http://torqkd.com/uploads/video1/temp/{{tempimage}}" />
+                <a href="http://gratitube-app.influxiq.com?redirectvideoplay={{locfilepath}}"><img src="./ng-images/playVideo.png" style="position: absolute; width: 20%;  left:40%; top:40%;" /></a>
+            </div>
+        </div>
+
+        <videogular ng-if="filename  && filetype=='video'" ng-init="vidsources = [{src: ('http://torqkd.com/uploads/video1/'+filename+'.mp4'), type: 'video/mp4'}]">
+            <vg-media vg-src="vidsources" vg-native-controls="true" ></vg-media>
+            <vg-poster vg-url="'http://torqkd.com/uploads/video1/thumb/{{filename}}.jpg'"></vg-poster>
+        </videogular>
+
+
+        <div class="record-menu" ng-show="!filename && !tempimage">
+
+            <ul>
+                <li><a href="javascript:void(0)" ng-click="uploadvideochoose()" >Record a Video </a> </li>
+                <li><a ng-click="uploadvideo()" href="javascript:void(0)" >Upload  Photo</a> </li>
+                <li><a href="javascript:void(0)" ng-click="uploadimage()" >Upload  Video</a> </li>
+                  <li><a ui-sref="templates" >Choose From Templates</a> </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="recordbody">
+
+      <h2 ng-click="showtitle = !showtitle" class="activerecord"> Title &  Massage</h2>
+       <div class="textcon" ng-init="showtitle = false" ng-show="showtitle">
+           <label>Title</label>
+           <input type="text" id="title" class="recordinput">
+
+           <label>Massage</label>
+           <textarea id="message" class="recordmassage"></textarea>
+
+
+
+       </div>
+
+
+       <h2 ng-click="showoprivacy = !showoprivacy" > Privacy</h2>
+        <div class="textcon" ng-init="showoprivacy = false" ng-show="showoprivacy">
+            <input type="radio" ng-model="privacyVal" value="Public" class="rediobox"><span class="rediolabel">Public</span>
+
+
+            <input type="radio" ng-model="privacyVal" value="Private" class="rediobox" class="rediolabel"><span>Private</span>
+            <div class="clear"></div>
+
+        </div>
+
+
+        <h2 ng-click="showCharity = !showCharity"> Make A Donation</h2>
+
+        <div ng-show="showCharity">
+
+            <div class="selectdiv">
+            <select ng-model = "charityL" ng-options="item.name for item in charityList  track by item.id">
+                <option value="">SELECT A CHARITY</option>
+            </select>
+			
+            </div>
+            <div class="amountdiv">
+                <label>Donation Amount</label> <span >$<input type="text" ng-model="charityD" placeholder="0.00"></span>
+                <div class="clear"></div>
+            </div>
+            <div class="amountdiv">
+                <label>Donations To Date</label> <span>${{(charityL.total)?charityL.total:'0.00'}}</span>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+
+
+
+
+        <h2 ng-click="showGift = !showGift"> Send A Gift</h2>
+
+        <div  ng-show="showGift">
+
+
+            <div class="recordslidermain">
+                <div class="recordsliderwrapper">
+
+                    <div class="prevbtn"><img ng-click="prev1()" src="ng-images/leftslidr.png" /></div>
+                    <imageslider images="images" />
+
+                    <div class="nextbtn">  <img ng-click="next1()" src="ng-images/rightslide.png" /></div>
+                    <div class="clear"></div>
+
+                    <div class="Shippingdiv">
+                        <h6>Shipping Info</h6>
+                        <label>Shipping Name</label>
+                        <input type="text" placeholder="First Name" class="inputshiping">
+                        <input type="text" placeholder="Last Name" class="inputshiping">
+
+                        <label>Address</label>
+                        <input type="text" placeholder="Shipping Address" class="inputshiping">
+
+
+                        <label>City</label>
+                        <input type="text" placeholder="Shipping City" class="inputshiping">
+
+                        <label>State/Province</label>
+                       <select class="selectshiping">
+
+                           <option>State/Province</option>
+                           <option>State/Province</option>
+                           <option>State/Province</option>
+
+                       </select>
+
+                        <label>Country</label>
+                        <select class="selectshiping">
+
+                            <option>Country</option>
+                            <option>Country</option>
+                            <option>Country</option>
+
+                        </select>
+
+                        <label>Postal Code</label>
+                        <input type="text" placeholder="Postal Code" class="inputshiping">
+
+
+                    <input type="button" ng-click="showGift = !showGift"  value="Continue" class="continuebtn">
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+  <!--      <h2 ng-click="showRecipient = !showRecipient"> Select Recipient</h2>
+
+        <div  ng-show="showRecipient" class="friendblock" ng-repeat="item in friendList">
+            <div class="frindimg"><img src="https://graph.facebook.com/{{item.id}}/picture?type=normal" alt="#" /></div>
+
+            <div class="frindtext">
+                <strong>{{item.name}}</strong>
+                <!--<span>Demo Text</span>-->
+
+      <!--        </div>
+
+            <div class="frindbtn">
+                <a href="javascript:void(0);" ng-click="selRecipient(item.id)" ng-class="(recipientId.indexOf(item.id) > -1)?'fbtn1':'fbtn2'">Select</a>
+                <div class="clear"></div>
+
+            </div>
+
+
+
+            <div class="clear"></div>
+
+        </div>
+
+-->
+        <input type="submit" value="Share"  class="recoresubmit">
+        <input type="button" value="Reset" ng-click="formreset()" class="recoresubmit">
+
+
+
+        <!----->
+    </div>
+    </div>
+</form>
+    </div>

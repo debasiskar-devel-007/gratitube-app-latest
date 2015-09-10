@@ -1,0 +1,42 @@
+<div id="menu" class="menucontain">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 98%; height: 70px; margin: 0 auto; padding: 0 1%">
+        <tr>
+            <td align="left" valign="middle" width="25%"><div class="main-page lateral-slide-menu-main-page">
+                <a href="javascript:void(0)"  class="toggle-menu" lateral-slide-menu-toggle><img src="./ng-images/link1.png" alt="#" /></a>
+            </div>
+            </td>
+            <td align="center" valign="middle" width="50%"><img src="./ng-images/addreminder.png" alt="#" class="containlogo"  style="display: block; margin: 0 auto;"/></td>
+            <td align="right" valign="middle" width="25%">&nbsp;</td>
+
+
+
+        </tr>
+
+
+    </table>
+</div>
+
+<div class="maincontent">
+
+    <div class="addReminderbody">
+    <form ng-submit="addReminder()">
+
+        <label>Title</label> <input type="text" id="title" ng-model="form.title" >
+
+        <label>Date </label> <input type="text" id="Event_from_date" name="Event[from_date]"
+           class = "form-control input-form"
+           ng-model = "form.rdate"
+           datepicker-popup="{{format}}"
+           is-open="opened" ng-required="true" close-text="Close" show-weeks="false" min-date="minDate" max-date="maxDate"
+           ng-focus="open($event)"
+           >
+
+        <label>Details</label>
+        <textarea class="detailara" ng-model="form.rdetail"></textarea>
+        <input type="submit" value="Save" class="subbtnadd" >
+
+
+        </form>
+</div>
+</div>
+

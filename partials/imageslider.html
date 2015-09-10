@@ -1,0 +1,10 @@
+<div ng-repeat="image in images" ng-show="image.visible">
+
+       <div class="galleryimgdiv"> <img src="{{image.src}}" />
+       <div class="gallerypricediv">{{image.price}} </div>
+
+           <input type="button" value="Select" ng-click="selImg=$index" ng-class="(selImg == $index)?'selectbtn':'selectbtn2'">
+       </div>
+
+    </div>
+

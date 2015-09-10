@@ -1,0 +1,43 @@
+<div id="menu" class="menucontain">
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 98%; height: 70px; margin: 0 auto; padding: 0 1%">
+        <tr>
+            <td align="left" valign="middle" width="25%"><div class="main-page lateral-slide-menu-main-page">
+                <a href="javascript:void(0)"  class="toggle-menu" lateral-slide-menu-toggle><img src="./ng-images/link1.png" alt="#" /></a>
+            </div>
+            </td>
+            <td align="center" valign="middle" width="50%"><img src="./ng-images/profile_h.png" alt="#" class="containlogo"  style="display: block; margin: 0 auto;"/></td>
+            <td align="right" valign="middle" width="25%"></td>
+
+
+
+        </tr>
+
+
+    </table>
+</div>
+
+
+<div class="profile-formwrapper">
+    <h2>Public Profile</h2>
+
+    <form ng-submit="updateProfile()">
+
+    <div class="profileformcon">
+        <input type="text" placeholder="First Name" class="inputname" ng-model="form.fname">
+
+        <input type="text" placeholder="Last Name" class="inputname" ng-model="form.lname">
+
+        <input type="text" placeholder="Website" class="inputname" ng-model="form.website">
+
+        <textarea class="bioarea" placeholder="Bio" ng-model="form.bio"></textarea>
+
+
+
+
+    </div>
+    <input type="submit" placeholder="Submit" value="Submit" class="prosubbtn">
+    </form>
+
+
+</div>
+
